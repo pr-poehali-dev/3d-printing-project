@@ -650,7 +650,7 @@ export default function Index() {
                     <span>WhatsApp</span>
                   </a>
                   <a 
-                    href="https://t.me/+79957939821" 
+                    href="https://t.me/dmd3d" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors font-medium"
