@@ -249,7 +249,88 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="pricing" className="py-20 px-4 bg-white">
+      <section id="testimonials" className="py-20 px-4 bg-white">
+        <div className="container mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Отзывы клиентов</h2>
+          <p className="text-center text-gray-600 mb-12 text-lg">Что говорят о нас наши клиенты</p>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <Card className="hover:shadow-xl transition-all duration-300 border-2">
+              <CardContent className="p-8">
+                <div className="flex gap-1 mb-4">
+                  <Icon name="Star" size={20} className="text-yellow-400 fill-yellow-400" />
+                  <Icon name="Star" size={20} className="text-yellow-400 fill-yellow-400" />
+                  <Icon name="Star" size={20} className="text-yellow-400 fill-yellow-400" />
+                  <Icon name="Star" size={20} className="text-yellow-400 fill-yellow-400" />
+                  <Icon name="Star" size={20} className="text-yellow-400 fill-yellow-400" />
+                </div>
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  "Отличное качество печати! Прототип получился именно таким, как мы задумывали. Сроки соблюдены, цена адекватная. Обязательно обратимся снова."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold">
+                    АК
+                  </div>
+                  <div>
+                    <p className="font-semibold">Алексей Кузнецов</p>
+                    <p className="text-sm text-gray-500">Основатель стартапа</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-all duration-300 border-2">
+              <CardContent className="p-8">
+                <div className="flex gap-1 mb-4">
+                  <Icon name="Star" size={20} className="text-yellow-400 fill-yellow-400" />
+                  <Icon name="Star" size={20} className="text-yellow-400 fill-yellow-400" />
+                  <Icon name="Star" size={20} className="text-yellow-400 fill-yellow-400" />
+                  <Icon name="Star" size={20} className="text-yellow-400 fill-yellow-400" />
+                  <Icon name="Star" size={20} className="text-yellow-400 fill-yellow-400" />
+                </div>
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  "Профессиональный подход на всех этапах работы. Помогли оптимизировать модель под печать, подсказали лучший материал. Результат превзошёл ожидания!"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold">
+                    МС
+                  </div>
+                  <div>
+                    <p className="font-semibold">Мария Смирнова</p>
+                    <p className="text-sm text-gray-500">Архитектор</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-all duration-300 border-2">
+              <CardContent className="p-8">
+                <div className="flex gap-1 mb-4">
+                  <Icon name="Star" size={20} className="text-yellow-400 fill-yellow-400" />
+                  <Icon name="Star" size={20} className="text-yellow-400 fill-yellow-400" />
+                  <Icon name="Star" size={20} className="text-yellow-400 fill-yellow-400" />
+                  <Icon name="Star" size={20} className="text-yellow-400 fill-yellow-400" />
+                  <Icon name="Star" size={20} className="text-yellow-400 fill-yellow-400" />
+                </div>
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  "Заказывали серию деталей для производства. Всё выполнено качественно и в срок. Особенно понравилась оперативная связь и готовность идти навстречу."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold">
+                    ДП
+                  </div>
+                  <div>
+                    <p className="font-semibold">Дмитрий Петров</p>
+                    <p className="text-sm text-gray-500">Инженер-технолог</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Цены и тарифы</h2>
           <p className="text-center text-gray-600 mb-12 text-lg">Прозрачное ценообразование без скрытых платежей</p>
