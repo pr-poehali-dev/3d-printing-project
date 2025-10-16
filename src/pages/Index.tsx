@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -14,6 +14,22 @@ export default function Index() {
     hours: ''
   });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showTelegramBanner, setShowTelegramBanner] = useState(false);
+
+  useEffect(() => {
+    const bannerShown = localStorage.getItem('telegramBannerShown');
+    if (!bannerShown) {
+      const timer = setTimeout(() => {
+        setShowTelegramBanner(true);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const closeTelegramBanner = () => {
+    setShowTelegramBanner(false);
+    localStorage.setItem('telegramBannerShown', 'true');
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,6 +44,46 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      {showTelegramBanner && (
+        <div className="fixed inset-0 bg-black/50 z-[60] flex items-center justify-center p-4 animate-fade-in">
+          <Card className="max-w-md w-full relative animate-scale-in">
+            <button
+              onClick={closeTelegramBanner}
+              className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors"
+              aria-label="Закрыть"
+            >
+              <Icon name="X" size={20} />
+            </button>
+            <CardContent className="p-8">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6">
+                  <Icon name="Send" size={40} className="text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Подпишитесь на наш Telegram!</h3>
+                <p className="text-gray-600 mb-6">
+                  Получайте эксклюзивные новости о новых проектах, скидки и полезные советы по 3D печати
+                </p>
+                <a
+                  href="https://t.me/dmd3d"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-4 px-6 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors font-semibold text-lg flex items-center justify-center gap-2 mb-3"
+                  onClick={() => localStorage.setItem('telegramBannerShown', 'true')}
+                >
+                  <Icon name="Send" size={24} />
+                  Перейти в Telegram
+                </a>
+                <button
+                  onClick={closeTelegramBanner}
+                  className="text-gray-500 hover:text-gray-700 text-sm transition-colors"
+                >
+                  Возможно, позже
+                </button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      )}
       <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
         <nav className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
