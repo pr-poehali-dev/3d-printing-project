@@ -510,6 +510,30 @@ export default function Index() {
                   <span>Домодедово, ул. 1 Коммунистическая, 28а</span>
                 </div>
               </div>
+
+              <div className="mt-6 pt-6 border-t">
+                <p className="text-sm font-semibold mb-3 text-gray-700">Быстрая связь:</p>
+                <div className="flex gap-3">
+                  <a 
+                    href="https://wa.me/79957939821" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors font-medium"
+                  >
+                    <Icon name="MessageCircle" size={20} />
+                    <span>WhatsApp</span>
+                  </a>
+                  <a 
+                    href="https://t.me/+79957939821" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors font-medium"
+                  >
+                    <Icon name="Send" size={20} />
+                    <span>Telegram</span>
+                  </a>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
