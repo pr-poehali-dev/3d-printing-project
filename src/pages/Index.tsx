@@ -9,14 +9,16 @@ export default function Index() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    tariff: '500',
+    hours: ''
   });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: '', email: '', message: '', tariff: '500', hours: '' });
   };
 
   const scrollToSection = (id: string) => {
@@ -453,13 +455,71 @@ export default function Index() {
       </section>
 
       <section id="contact" className="py-20 px-4 bg-gradient-to-b from-white to-gray-50">
-        <div className="container mx-auto max-w-2xl">
+        <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Свяжитесь с нами</h2>
           <p className="text-center text-gray-600 mb-12 text-lg">Ответим на все вопросы и рассчитаем стоимость вашего проекта</p>
           
-          <Card className="shadow-xl">
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <Card className="shadow-xl">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                  <Icon name="Calculator" size={24} className="text-primary" />
+                  Калькулятор стоимости
+                </h3>
+                
+                <div className="space-y-6">
+                  <div>
+                    <label className="block text-sm font-semibold mb-2">Тариф</label>
+                    <select 
+                      className="w-full h-12 px-4 rounded-md border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-primary"
+                      value={formData.tariff}
+                      onChange={(e) => setFormData({...formData, tariff: e.target.value})}
+                    >
+                      <option value="350">Базовый - ₽350/час</option>
+                      <option value="500">Профессиональный - ₽500/час</option>
+                      <option value="800">Премиум - ₽800/час</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-semibold mb-2">Количество часов</label>
+                    <Input 
+                      type="number" 
+                      min="1"
+                      placeholder="Введите количество часов" 
+                      value={formData.hours}
+                      onChange={(e) => setFormData({...formData, hours: e.target.value})}
+                      className="h-12"
+                    />
+                  </div>
+                  
+                  {formData.hours && (
+                    <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-6 rounded-lg border-2 border-primary">
+                      <p className="text-sm text-gray-600 mb-2">Примерная стоимость:</p>
+                      <p className="text-4xl font-bold text-primary">
+                        ₽{(parseInt(formData.tariff) * parseInt(formData.hours)).toLocaleString('ru-RU')}
+                      </p>
+                      <p className="text-sm text-gray-500 mt-2">
+                        {formData.hours} {parseInt(formData.hours) === 1 ? 'час' : parseInt(formData.hours) < 5 ? 'часа' : 'часов'} × ₽{parseInt(formData.tariff).toLocaleString('ru-RU')}
+                      </p>
+                    </div>
+                  )}
+                  
+                  <p className="text-xs text-gray-500">
+                    * Расчет является ориентировочным. Точная стоимость определяется после обсуждения деталей проекта.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          
+            <Card className="shadow-xl">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                  <Icon name="MessageSquare" size={24} className="text-primary" />
+                  Форма обратной связи
+                </h3>
+                
+                <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-sm font-semibold mb-2">Имя</label>
                   <Input 
@@ -536,6 +596,7 @@ export default function Index() {
               </div>
             </CardContent>
           </Card>
+          </div>
         </div>
       </section>
 
