@@ -29,11 +29,11 @@ export default function Index() {
       <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
         <nav className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <Icon name="Boxes" size={24} className="text-white" />
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-lg">B.G.V.</span>
               </div>
-              <span className="text-2xl font-bold">3D ПРИНТИНГ</span>
+              <span className="text-2xl font-bold hidden sm:block">3D ПРИНТИНГ</span>
             </div>
             <div className="hidden md:flex gap-6">
               <button onClick={() => scrollToSection('hero')} className="hover:text-primary transition-colors">Главная</button>
@@ -517,9 +517,9 @@ export default function Index() {
 
       <footer className="bg-gray-900 text-white py-12 px-4">
         <div className="container mx-auto text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-              <Icon name="Boxes" size={24} className="text-white" />
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
+              <span className="text-white font-bold text-lg">B.G.V.</span>
             </div>
             <span className="text-2xl font-bold">3D ПРИНТИНГ</span>
           </div>
