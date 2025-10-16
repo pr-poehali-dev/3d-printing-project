@@ -44,7 +44,16 @@ export default function Index() {
               <button onClick={() => scrollToSection('pricing')} className="hover:text-primary transition-colors">Цены</button>
               <button onClick={() => scrollToSection('contact')} className="hover:text-primary transition-colors">Контакты</button>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
+              <a 
+                href="https://t.me/dmd3d" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hidden lg:flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors font-medium"
+              >
+                <Icon name="Send" size={18} />
+                <span>Telegram</span>
+              </a>
               <Button onClick={() => scrollToSection('contact')} className="hidden md:flex bg-gradient-to-r from-primary to-secondary hover:opacity-90">
                 Заказать
               </Button>
