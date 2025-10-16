@@ -1,14 +1,375 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import Icon from '@/components/ui/icon';
 
-const Index = () => {
+export default function Index() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
+    setFormData({ name: '', email: '', message: '' });
+  };
+
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
+        <nav className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                <Icon name="Boxes" size={24} className="text-white" />
+              </div>
+              <span className="text-2xl font-bold">3D ПРИНТИНГ</span>
+            </div>
+            <div className="hidden md:flex gap-6">
+              <button onClick={() => scrollToSection('hero')} className="hover:text-primary transition-colors">Главная</button>
+              <button onClick={() => scrollToSection('services')} className="hover:text-primary transition-colors">Услуги</button>
+              <button onClick={() => scrollToSection('portfolio')} className="hover:text-primary transition-colors">Портфолио</button>
+              <button onClick={() => scrollToSection('pricing')} className="hover:text-primary transition-colors">Цены</button>
+              <button onClick={() => scrollToSection('contact')} className="hover:text-primary transition-colors">Контакты</button>
+            </div>
+            <Button onClick={() => scrollToSection('contact')} className="bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+              Заказать
+            </Button>
+          </div>
+        </nav>
+      </header>
+
+      <section id="hero" className="pt-32 pb-20 px-4">
+        <div className="container mx-auto text-center">
+          <div className="animate-fade-in">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Инновационные технологии
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              Превращаем ваши идеи в реальность с помощью современной 3D-печати
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button onClick={() => scrollToSection('contact')} size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg px-8">
+                Получить консультацию
+              </Button>
+              <Button onClick={() => scrollToSection('portfolio')} size="lg" variant="outline" className="text-lg px-8">
+                Смотреть работы
+              </Button>
+            </div>
+          </div>
+          <div className="mt-16 relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-3xl"></div>
+            <img 
+              src="https://cdn.poehali.dev/projects/f788e3ec-b78a-424f-8b2f-534238ed0696/files/8497b96c-7e44-4937-b558-56336cc3e47a.jpg" 
+              alt="3D печать" 
+              className="relative rounded-2xl shadow-2xl mx-auto max-w-2xl w-full animate-float"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="py-20 px-4 bg-white">
+        <div className="container mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Наши услуги</h2>
+          <p className="text-center text-gray-600 mb-12 text-lg">Полный спектр услуг 3D-печати для любых задач</p>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Icon name="Box" size={32} className="text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Прототипирование</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Быстрое создание прототипов для тестирования концепций и презентаций. Высокая точность и детализация.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Icon name="Layers" size={32} className="text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Мелкосерийное производство</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Печать малых и средних партий изделий. Идеально для стартапов и небольших производств.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Icon name="Settings" size={32} className="text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Инженерные решения</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Разработка и печать функциональных деталей, инструментов и приспособлений для промышленности.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Портфолио работ</h2>
+          <p className="text-center text-gray-600 mb-12 text-lg">Примеры наших проектов</p>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300">
+              <div className="relative overflow-hidden">
+                <img 
+                  src="https://cdn.poehali.dev/projects/f788e3ec-b78a-424f-8b2f-534238ed0696/files/8497b96c-7e44-4937-b558-56336cc3e47a.jpg" 
+                  alt="Проект 1" 
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-6 text-white">
+                    <h4 className="text-xl font-bold">Геометрическая модель</h4>
+                    <p className="text-sm">Сложная решетчатая структура</p>
+                  </div>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Материал: PLA</span>
+                  <span className="text-sm font-semibold text-primary">48 часов</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300">
+              <div className="relative overflow-hidden">
+                <img 
+                  src="https://cdn.poehali.dev/projects/f788e3ec-b78a-424f-8b2f-534238ed0696/files/12678eda-3f25-42c5-b328-7ffbb9e3cad3.jpg" 
+                  alt="Проект 2" 
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-6 text-white">
+                    <h4 className="text-xl font-bold">Архитектурный макет</h4>
+                    <p className="text-sm">Детализированная модель здания</p>
+                  </div>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Материал: Resin</span>
+                  <span className="text-sm font-semibold text-primary">72 часа</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300">
+              <div className="relative overflow-hidden">
+                <img 
+                  src="https://cdn.poehali.dev/projects/f788e3ec-b78a-424f-8b2f-534238ed0696/files/4a435cb5-a9c0-4b15-8f59-b8d251c0068f.jpg" 
+                  alt="Проект 3" 
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-6 text-white">
+                    <h4 className="text-xl font-bold">Механические детали</h4>
+                    <p className="text-sm">Функциональные компоненты</p>
+                  </div>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Материал: PETG</span>
+                  <span className="text-sm font-semibold text-primary">36 часов</span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" className="py-20 px-4 bg-white">
+        <div className="container mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Цены и тарифы</h2>
+          <p className="text-center text-gray-600 mb-12 text-lg">Прозрачное ценообразование без скрытых платежей</p>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <Card className="relative hover:shadow-2xl transition-all duration-300 border-2">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-2">Базовый</h3>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold">₽500</span>
+                  <span className="text-gray-600">/час</span>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Стандартное качество</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>PLA/ABS пластик</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Базовая постобработка</span>
+                  </li>
+                </ul>
+                <Button onClick={() => scrollToSection('contact')} variant="outline" className="w-full">Выбрать</Button>
+              </CardContent>
+            </Card>
+
+            <Card className="relative hover:shadow-2xl transition-all duration-300 border-4 border-primary scale-105">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-1 rounded-full text-sm font-semibold">
+                Популярный
+              </div>
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-2">Профессиональный</h3>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold">₽800</span>
+                  <span className="text-gray-600">/час</span>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Высокое качество</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Премиум материалы</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Полная постобработка</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Консультация инженера</span>
+                  </li>
+                </ul>
+                <Button onClick={() => scrollToSection('contact')} className="w-full bg-gradient-to-r from-primary to-secondary">Выбрать</Button>
+              </CardContent>
+            </Card>
+
+            <Card className="relative hover:shadow-2xl transition-all duration-300 border-2">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-2">Премиум</h3>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold">₽1200</span>
+                  <span className="text-gray-600">/час</span>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Максимальное качество</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Любые материалы</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Профессиональная обработка</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Приоритетная поддержка</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Срочное изготовление</span>
+                  </li>
+                </ul>
+                <Button onClick={() => scrollToSection('contact')} variant="outline" className="w-full">Выбрать</Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="py-20 px-4 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto max-w-2xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Свяжитесь с нами</h2>
+          <p className="text-center text-gray-600 mb-12 text-lg">Ответим на все вопросы и рассчитаем стоимость вашего проекта</p>
+          
+          <Card className="shadow-xl">
+            <CardContent className="p-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-sm font-semibold mb-2">Имя</label>
+                  <Input 
+                    placeholder="Ваше имя" 
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    required
+                    className="h-12"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold mb-2">Email</label>
+                  <Input 
+                    type="email" 
+                    placeholder="your@email.com" 
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    required
+                    className="h-12"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold mb-2">Сообщение</label>
+                  <Textarea 
+                    placeholder="Расскажите о вашем проекте..." 
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    required
+                    className="min-h-32"
+                  />
+                </div>
+                <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg h-14">
+                  Отправить заявку
+                </Button>
+              </form>
+
+              <div className="mt-8 pt-8 border-t space-y-4">
+                <div className="flex items-center gap-3">
+                  <Icon name="Mail" size={20} className="text-primary" />
+                  <span>info@3dprint.ru</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon name="Phone" size={20} className="text-primary" />
+                  <span>+7 (999) 123-45-67</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon name="MapPin" size={20} className="text-primary" />
+                  <span>Москва, ул. Инновационная, 123</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <footer className="bg-gray-900 text-white py-12 px-4">
+        <div className="container mx-auto text-center">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+              <Icon name="Boxes" size={24} className="text-white" />
+            </div>
+            <span className="text-2xl font-bold">3D ПРИНТИНГ</span>
+          </div>
+          <p className="text-gray-400 mb-6">Инновационные технологии 3D-печати</p>
+          <p className="text-gray-500 text-sm">© 2024 3D ПРИНТИНГ. Все права защищены.</p>
+        </div>
+      </footer>
     </div>
   );
-};
-
-export default Index;
+}
