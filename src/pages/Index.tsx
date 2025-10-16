@@ -11,6 +11,7 @@ export default function Index() {
     email: '',
     message: ''
   });
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,6 +21,7 @@ export default function Index() {
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -40,11 +42,62 @@ export default function Index() {
               <button onClick={() => scrollToSection('pricing')} className="hover:text-primary transition-colors">Цены</button>
               <button onClick={() => scrollToSection('contact')} className="hover:text-primary transition-colors">Контакты</button>
             </div>
-            <Button onClick={() => scrollToSection('contact')} className="bg-gradient-to-r from-primary to-secondary hover:opacity-90">
-              Заказать
-            </Button>
+            <div className="flex items-center gap-4">
+              <Button onClick={() => scrollToSection('contact')} className="hidden md:flex bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+                Заказать
+              </Button>
+              <button 
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+                className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                aria-label="Toggle menu"
+              >
+                <Icon name={mobileMenuOpen ? "X" : "Menu"} size={24} />
+              </button>
+            </div>
           </div>
         </nav>
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t animate-fade-in">
+            <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
+              <button 
+                onClick={() => scrollToSection('hero')} 
+                className="text-left py-3 px-4 hover:bg-gray-100 rounded-lg transition-colors font-medium"
+              >
+                Главная
+              </button>
+              <button 
+                onClick={() => scrollToSection('services')} 
+                className="text-left py-3 px-4 hover:bg-gray-100 rounded-lg transition-colors font-medium"
+              >
+                Услуги
+              </button>
+              <button 
+                onClick={() => scrollToSection('portfolio')} 
+                className="text-left py-3 px-4 hover:bg-gray-100 rounded-lg transition-colors font-medium"
+              >
+                Портфолио
+              </button>
+              <button 
+                onClick={() => scrollToSection('pricing')} 
+                className="text-left py-3 px-4 hover:bg-gray-100 rounded-lg transition-colors font-medium"
+              >
+                Цены
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')} 
+                className="text-left py-3 px-4 hover:bg-gray-100 rounded-lg transition-colors font-medium"
+              >
+                Контакты
+              </button>
+              <Button 
+                onClick={() => scrollToSection('contact')} 
+                className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 mt-2"
+              >
+                Заказать
+              </Button>
+            </div>
+          </div>
+        )}
       </header>
 
       <section id="hero" className="pt-32 pb-20 px-4">
