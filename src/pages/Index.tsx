@@ -499,15 +499,15 @@ export default function Index() {
               <div className="mt-8 pt-8 border-t space-y-4">
                 <div className="flex items-center gap-3">
                   <Icon name="Mail" size={20} className="text-primary" />
-                  <span>info@3dprint.ru</span>
+                  <a href="mailto:dmd.3D@yandex.ru" className="hover:text-primary transition-colors">dmd.3D@yandex.ru</a>
                 </div>
                 <div className="flex items-center gap-3">
                   <Icon name="Phone" size={20} className="text-primary" />
-                  <span>+7 (999) 123-45-67</span>
+                  <a href="tel:+79957939821" className="hover:text-primary transition-colors">+7 995 793-98-21</a>
                 </div>
                 <div className="flex items-center gap-3">
                   <Icon name="MapPin" size={20} className="text-primary" />
-                  <span>Москва, ул. Инновационная, 123</span>
+                  <span>Домодедово, ул. 1 Коммунистическая, 28а</span>
                 </div>
               </div>
             </CardContent>
