@@ -206,21 +206,21 @@ export default function Index() {
             <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300">
               <div className="relative overflow-hidden">
                 <img 
-                  src="https://cdn.poehali.dev/projects/f788e3ec-b78a-424f-8b2f-534238ed0696/files/8497b96c-7e44-4937-b558-56336cc3e47a.jpg" 
+                  src="https://cdn.poehali.dev/files/09b68303-7b69-464a-89ff-38eb21f52c67.jpg" 
                   alt="Проект 1" 
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                   <div className="p-6 text-white">
-                    <h4 className="text-xl font-bold">Геометрическая модель</h4>
-                    <p className="text-sm">Сложная решетчатая структура</p>
+                    <h4 className="text-xl font-bold">Промышленные детали</h4>
+                    <p className="text-sm">Точное изготовление корпусных деталей</p>
                   </div>
                 </div>
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-600">Материал: PLA</span>
-                  <span className="text-sm font-semibold text-primary">48 часов</span>
+                  <span className="text-sm font-semibold text-primary">24 часа</span>
                 </div>
               </CardContent>
             </Card>
@@ -363,7 +363,7 @@ export default function Index() {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-2">Базовый</h3>
                 <div className="mb-6">
-                  <span className="text-4xl font-bold">₽500</span>
+                  <span className="text-4xl font-bold">₽350</span>
                   <span className="text-gray-600">/час</span>
                 </div>
                 <ul className="space-y-3 mb-8">
