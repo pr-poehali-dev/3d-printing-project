@@ -174,6 +174,29 @@ export default function Index() {
         </div>
       </section>
 
+      <section className="py-20 px-4 bg-gradient-to-r from-primary to-secondary text-white">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div className="animate-fade-in">
+              <div className="text-5xl md:text-6xl font-bold mb-2">500+</div>
+              <p className="text-lg opacity-90">Проектов выполнено</p>
+            </div>
+            <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              <div className="text-5xl md:text-6xl font-bold mb-2">200+</div>
+              <p className="text-lg opacity-90">Довольных клиентов</p>
+            </div>
+            <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="text-5xl md:text-6xl font-bold mb-2">7</div>
+              <p className="text-lg opacity-90">Лет опыта</p>
+            </div>
+            <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="text-5xl md:text-6xl font-bold mb-2">99%</div>
+              <p className="text-lg opacity-90">Успешных заказов</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="portfolio" className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Портфолио работ</h2>
