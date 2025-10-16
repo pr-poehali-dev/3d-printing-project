@@ -209,13 +209,13 @@ export default function Index() {
               <div className="relative overflow-hidden">
                 <img 
                   src="https://cdn.poehali.dev/files/09b68303-7b69-464a-89ff-38eb21f52c67.jpg" 
-                  alt="Проект 1" 
+                  alt="Корпусные детали" 
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                   <div className="p-6 text-white">
-                    <h4 className="text-xl font-bold">Промышленные детали</h4>
-                    <p className="text-sm">Точное изготовление корпусных деталей</p>
+                    <h4 className="text-xl font-bold">Корпусные детали</h4>
+                    <p className="text-sm">Промышленные компоненты</p>
                   </div>
                 </div>
               </div>
@@ -230,21 +230,21 @@ export default function Index() {
             <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300">
               <div className="relative overflow-hidden">
                 <img 
-                  src="https://cdn.poehali.dev/projects/f788e3ec-b78a-424f-8b2f-534238ed0696/files/12678eda-3f25-42c5-b328-7ffbb9e3cad3.jpg" 
-                  alt="Проект 2" 
+                  src="https://cdn.poehali.dev/files/3ff3a67d-87de-479b-9270-de602aa6b45c.jpg" 
+                  alt="Автомобильная деталь" 
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                   <div className="p-6 text-white">
-                    <h4 className="text-xl font-bold">Архитектурный макет</h4>
-                    <p className="text-sm">Детализированная модель здания</p>
+                    <h4 className="text-xl font-bold">Автодетали</h4>
+                    <p className="text-sm">Корпус дроссельной заслонки</p>
                   </div>
                 </div>
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600">Материал: Resin</span>
-                  <span className="text-sm font-semibold text-primary">72 часа</span>
+                  <span className="text-sm text-gray-600">Материал: ABS</span>
+                  <span className="text-sm font-semibold text-primary">18 часов</span>
                 </div>
               </CardContent>
             </Card>
@@ -252,21 +252,87 @@ export default function Index() {
             <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300">
               <div className="relative overflow-hidden">
                 <img 
-                  src="https://cdn.poehali.dev/projects/f788e3ec-b78a-424f-8b2f-534238ed0696/files/4a435cb5-a9c0-4b15-8f59-b8d251c0068f.jpg" 
-                  alt="Проект 3" 
+                  src="https://cdn.poehali.dev/files/a2c5b08c-f255-4cf8-a63a-9b926bc640fa.jpg" 
+                  alt="Автомобильная деталь вид 2" 
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                   <div className="p-6 text-white">
-                    <h4 className="text-xl font-bold">Механические детали</h4>
+                    <h4 className="text-xl font-bold">Сложная геометрия</h4>
+                    <p className="text-sm">Детали с внутренними каналами</p>
+                  </div>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Материал: ABS</span>
+                  <span className="text-sm font-semibold text-primary">20 часов</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300">
+              <div className="relative overflow-hidden">
+                <img 
+                  src="https://cdn.poehali.dev/files/65236c36-f437-413b-8eff-d6acd6b23e49.jpg" 
+                  alt="Механические компоненты" 
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-6 text-white">
+                    <h4 className="text-xl font-bold">Механические узлы</h4>
                     <p className="text-sm">Функциональные компоненты</p>
                   </div>
                 </div>
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Материал: PLA</span>
+                  <span className="text-sm font-semibold text-primary">12 часов</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300">
+              <div className="relative overflow-hidden">
+                <img 
+                  src="https://cdn.poehali.dev/files/447ee674-04af-45ed-9c72-9e352efb97c6.jpg" 
+                  alt="Белая деталь" 
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-6 text-white">
+                    <h4 className="text-xl font-bold">Дизайнерские изделия</h4>
+                    <p className="text-sm">Эстетичная форма и функциональность</p>
+                  </div>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Материал: PLA</span>
+                  <span className="text-sm font-semibold text-primary">15 часов</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300">
+              <div className="relative overflow-hidden">
+                <img 
+                  src="https://cdn.poehali.dev/files/687b1171-a88b-4525-a3e5-e873c3b38c98.jpg" 
+                  alt="Шестерня" 
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-6 text-white">
+                    <h4 className="text-xl font-bold">Зубчатые передачи</h4>
+                    <p className="text-sm">Точная геометрия зубьев</p>
+                  </div>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-600">Материал: PETG</span>
-                  <span className="text-sm font-semibold text-primary">36 часов</span>
+                  <span className="text-sm font-semibold text-primary">8 часов</span>
                 </div>
               </CardContent>
             </Card>
