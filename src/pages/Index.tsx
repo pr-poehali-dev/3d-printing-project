@@ -397,7 +397,7 @@ export default function Index() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-600">Материал: ABS</span>
-                  <span className="text-sm font-semibold text-primary">8 часов</span>
+                  <span className="text-sm font-semibold text-primary">FDM печать</span>
                 </div>
               </CardContent>
             </Card>
