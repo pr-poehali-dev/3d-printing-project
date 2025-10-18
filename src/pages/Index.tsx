@@ -352,7 +352,7 @@ export default function Index() {
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600">Материал: PLA</span>
+                  <span className="text-sm text-gray-600">Материал: PETG</span>
                   <span className="text-sm font-semibold text-primary">12 часов</span>
                 </div>
               </CardContent>
