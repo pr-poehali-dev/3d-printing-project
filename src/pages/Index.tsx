@@ -687,6 +687,38 @@ export default function Index() {
                 <Button onClick={() => scrollToSection('contact')} variant="outline" className="w-full">Выбрать</Button>
               </CardContent>
             </Card>
+
+            <Card className="relative hover:shadow-2xl transition-all duration-300 border-2 border-primary">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-2">Индивидуальный</h3>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold">По запросу</span>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Уникальные проекты</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Разработка с нуля</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Консультация специалистов</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Полное сопровождение</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Гибкие условия</span>
+                  </li>
+                </ul>
+                <Button onClick={() => scrollToSection('contact')} className="w-full bg-gradient-to-r from-primary to-secondary">Обсудить проект</Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -718,6 +750,7 @@ export default function Index() {
                       <option value="800">Премиум - ₽800/час</option>
                       <option value="custom">Серийная печать - индивидуально</option>
                       <option value="1500">3D Сканирование - от ₽1500/объект</option>
+                      <option value="individual">Индивидуальный - по запросу</option>
                     </select>
                   </div>
                   
