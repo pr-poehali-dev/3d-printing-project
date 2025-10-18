@@ -287,7 +287,7 @@ export default function Index() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-600">Материал: ABS</span>
-                  <span className="text-sm font-semibold text-primary">24 часа</span>
+                  <span className="text-sm font-semibold text-primary">SLA печать</span>
                 </div>
               </CardContent>
             </Card>
