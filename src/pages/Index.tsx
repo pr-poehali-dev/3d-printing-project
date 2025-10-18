@@ -113,6 +113,7 @@ export default function Index() {
               <button onClick={() => scrollToSection('services')} className="hover:text-primary transition-colors">Услуги</button>
               <button onClick={() => scrollToSection('portfolio')} className="hover:text-primary transition-colors">Портфолио</button>
               <button onClick={() => scrollToSection('pricing')} className="hover:text-primary transition-colors">Цены</button>
+              <button onClick={() => scrollToSection('delivery')} className="hover:text-primary transition-colors">Доставка</button>
               <button onClick={() => scrollToSection('contact')} className="hover:text-primary transition-colors">Контакты</button>
             </div>
             <div className="flex items-center gap-3">
@@ -164,6 +165,12 @@ export default function Index() {
                 className="text-left py-3 px-4 hover:bg-gray-100 rounded-lg transition-colors font-medium"
               >
                 Цены
+              </button>
+              <button 
+                onClick={() => scrollToSection('delivery')} 
+                className="text-left py-3 px-4 hover:bg-gray-100 rounded-lg transition-colors font-medium"
+              >
+                Доставка
               </button>
               <button 
                 onClick={() => scrollToSection('contact')} 
@@ -717,6 +724,107 @@ export default function Index() {
                   </li>
                 </ul>
                 <Button onClick={() => scrollToSection('contact')} className="w-full bg-gradient-to-r from-primary to-secondary">Обсудить проект</Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="delivery" className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Доставка и получение</h2>
+          <p className="text-center text-gray-600 mb-12 text-lg">Удобные способы доставки вашего заказа</p>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <Card className="hover:shadow-2xl transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Icon name="MapPin" size={32} className="text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Самовывоз</h3>
+                <p className="text-gray-600 mb-4">Забирайте заказ из нашего офиса</p>
+                <div className="space-y-2 text-sm">
+                  <p className="flex items-center gap-2 justify-center">
+                    <Icon name="MapPin" size={16} className="text-primary" />
+                    <span>Домодедово, ул. 1 Коммунистическая, 28а</span>
+                  </p>
+                  <p className="flex items-center gap-2 justify-center">
+                    <Icon name="Clock" size={16} className="text-primary" />
+                    <span>Пн-Пт: 9:00-18:00</span>
+                  </p>
+                  <p className="font-bold text-primary mt-4">Бесплатно</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-2xl transition-all duration-300 border-2 border-primary">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Icon name="Truck" size={32} className="text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Курьером по Москве</h3>
+                <p className="text-gray-600 mb-4">Доставка в пределах МКАД</p>
+                <div className="space-y-2 text-sm">
+                  <p className="flex items-center gap-2 justify-center">
+                    <Icon name="Clock" size={16} className="text-primary" />
+                    <span>1-2 рабочих дня</span>
+                  </p>
+                  <p className="flex items-center gap-2 justify-center">
+                    <Icon name="Package" size={16} className="text-primary" />
+                    <span>До двери</span>
+                  </p>
+                  <p className="font-bold text-primary mt-4">от ₽500</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-2xl transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Icon name="Package" size={32} className="text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Почта России / СДЭК</h3>
+                <p className="text-gray-600 mb-4">Доставка по всей России</p>
+                <div className="space-y-2 text-sm">
+                  <p className="flex items-center gap-2 justify-center">
+                    <Icon name="Clock" size={16} className="text-primary" />
+                    <span>3-7 рабочих дней</span>
+                  </p>
+                  <p className="flex items-center gap-2 justify-center">
+                    <Icon name="MapPin" size={16} className="text-primary" />
+                    <span>В любой город</span>
+                  </p>
+                  <p className="font-bold text-primary mt-4">По тарифам перевозчика</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-12 max-w-3xl mx-auto">
+            <Card className="bg-gradient-to-r from-primary/10 to-secondary/10 border-2 border-primary">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <Icon name="Info" size={24} className="text-primary" />
+                  Важная информация
+                </h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Бесплатная упаковка для всех заказов</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Отслеживание заказа в режиме реального времени</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Доставка крупногабаритных изделий обсуждается индивидуально</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Возможна срочная доставка за дополнительную плату</span>
+                  </li>
+                </ul>
               </CardContent>
             </Card>
           </div>
