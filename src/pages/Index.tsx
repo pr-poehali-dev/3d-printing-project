@@ -506,7 +506,7 @@ export default function Index() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Цены и тарифы</h2>
           <p className="text-center text-gray-600 mb-12 text-lg">Прозрачное ценообразование без скрытых платежей</p>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <Card className="relative hover:shadow-2xl transition-all duration-300 border-2">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-2">Эконом</h3>
@@ -654,6 +654,39 @@ export default function Index() {
                 <Button onClick={() => scrollToSection('contact')} variant="outline" className="w-full">Выбрать</Button>
               </CardContent>
             </Card>
+
+            <Card className="relative hover:shadow-2xl transition-all duration-300 border-2">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-2">3D Сканирование</h3>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold">от ₽1500</span>
+                  <span className="text-gray-600">/объект</span>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Точное сканирование объектов</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Создание 3D-модели</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Обработка и оптимизация</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Файлы STL, OBJ, STEP</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Реверс-инжиниринг</span>
+                  </li>
+                </ul>
+                <Button onClick={() => scrollToSection('contact')} variant="outline" className="w-full">Выбрать</Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -684,6 +717,7 @@ export default function Index() {
                       <option value="500">Профессиональный - ₽500/час</option>
                       <option value="800">Премиум - ₽800/час</option>
                       <option value="custom">Серийная печать - индивидуально</option>
+                      <option value="1500">3D Сканирование - от ₽1500/объект</option>
                     </select>
                   </div>
                   
