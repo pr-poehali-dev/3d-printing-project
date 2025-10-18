@@ -695,6 +695,39 @@ export default function Index() {
               </CardContent>
             </Card>
 
+            <Card className="relative hover:shadow-2xl transition-all duration-300 border-2">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-2">3D Моделирование</h3>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold">от ₽2000</span>
+                  <span className="text-gray-600">/модель</span>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Создание 3D-моделей</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Доработка чертежей</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Оптимизация для печати</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Техническая документация</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Визуализация</span>
+                  </li>
+                </ul>
+                <Button onClick={() => scrollToSection('contact')} variant="outline" className="w-full">Выбрать</Button>
+              </CardContent>
+            </Card>
+
             <Card className="relative hover:shadow-2xl transition-all duration-300 border-2 border-primary">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-2">Индивидуальный</h3>
@@ -858,6 +891,7 @@ export default function Index() {
                       <option value="800">Премиум - ₽800/час</option>
                       <option value="custom">Серийная печать - индивидуально</option>
                       <option value="1500">3D Сканирование - от ₽1500/объект</option>
+                      <option value="2000">3D Моделирование - от ₽2000/модель</option>
                       <option value="individual">Индивидуальный - по запросу</option>
                     </select>
                   </div>
