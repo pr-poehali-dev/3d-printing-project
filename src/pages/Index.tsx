@@ -578,7 +578,7 @@ export default function Index() {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-2">Премиум</h3>
                 <div className="mb-6">
-                  <span className="text-4xl font-bold">₽800</span>
+                  <span className="text-4xl font-bold">от 15₽ гр. ₽800</span>
                   <span className="text-gray-600">/час</span>
                 </div>
                 <ul className="space-y-3 mb-8">
