@@ -423,6 +423,66 @@ export default function Index() {
                 </div>
               </CardContent>
             </Card>
+
+            <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300">
+              <div className="relative overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                <div className="w-full h-64 flex items-center justify-center">
+                  <Icon name="Box" size={80} className="text-primary/30" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-6 text-white">
+                    <h4 className="text-xl font-bold">3D Моделирование</h4>
+                    <p className="text-sm">Создание моделей под заказ</p>
+                  </div>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Разработка CAD-моделей</span>
+                  <span className="text-sm font-semibold text-primary">от ₽2000</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300">
+              <div className="relative overflow-hidden bg-gradient-to-br from-blue-100 to-blue-200">
+                <div className="w-full h-64 flex items-center justify-center">
+                  <Icon name="Scan" size={80} className="text-primary/30" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-6 text-white">
+                    <h4 className="text-xl font-bold">Реверс-инжиниринг</h4>
+                    <p className="text-sm">От сканирования до модели</p>
+                  </div>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Сканирование + моделирование</span>
+                  <span className="text-sm font-semibold text-primary">Комплекс услуг</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300">
+              <div className="relative overflow-hidden bg-gradient-to-br from-purple-100 to-purple-200">
+                <div className="w-full h-64 flex items-center justify-center">
+                  <Icon name="Pencil" size={80} className="text-primary/30" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-6 text-white">
+                    <h4 className="text-xl font-bold">Доработка моделей</h4>
+                    <p className="text-sm">Оптимизация и улучшение</p>
+                  </div>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Исправление ошибок</span>
+                  <span className="text-sm font-semibold text-primary">3D моделирование</span>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
