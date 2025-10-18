@@ -11,8 +11,10 @@ export default function Index() {
     email: '',
     message: '',
     tariff: '500',
-    hours: ''
+    hours: '',
+    file: null as File | null
   });
+  const [fileName, setFileName] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showTelegramBanner, setShowTelegramBanner] = useState(false);
 
@@ -31,10 +33,23 @@ export default function Index() {
     localStorage.setItem('telegramBannerShown', 'true');
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    if (file) {
+      setFormData({...formData, file});
+      setFileName(file.name);
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
-    setFormData({ name: '', email: '', message: '', tariff: '500', hours: '' });
+    if (formData.file) {
+      alert(`Спасибо за заявку! Файл "${formData.file.name}" прикреплён. Мы свяжемся с вами в ближайшее время.`);
+    } else {
+      alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
+    }
+    setFormData({ name: '', email: '', message: '', tariff: '500', hours: '', file: null });
+    setFileName('');
   };
 
   const scrollToSection = (id: string) => {
@@ -707,6 +722,30 @@ export default function Index() {
                     required
                     className="min-h-32"
                   />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold mb-2">Загрузить файл (необязательно)</label>
+                  <div className="relative">
+                    <input
+                      type="file"
+                      id="file-upload"
+                      onChange={handleFileChange}
+                      accept=".stl,.obj,.3mf,.step,.stp,.gcode"
+                      className="hidden"
+                    />
+                    <label
+                      htmlFor="file-upload"
+                      className="flex items-center justify-center gap-2 w-full h-12 px-4 border-2 border-dashed border-gray-300 rounded-md hover:border-primary cursor-pointer transition-colors bg-white"
+                    >
+                      <Icon name="Upload" size={20} className="text-gray-400" />
+                      <span className="text-gray-600">
+                        {fileName || 'Выберите 3D-модель или файл'}
+                      </span>
+                    </label>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-2">
+                    Поддерживаемые форматы: STL, OBJ, 3MF, STEP, G-code
+                  </p>
                 </div>
                 <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg h-14">
                   Отправить заявку
