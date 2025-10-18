@@ -531,7 +531,7 @@ export default function Index() {
                   </li>
                   <li className="flex items-start gap-2">
                     <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
-                    <span>PLA/ABS пластик</span>
+                    <span>PLA/PETG/ABS/TPU/SBS/ пластик</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
