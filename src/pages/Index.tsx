@@ -193,9 +193,8 @@ export default function Index() {
         <div className="container mx-auto text-center">
           <div className="animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-center">Инновационные технологии 3Д Студия B.G.V.</h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Превращаем ваши идеи в реальность с помощью современной 3D-печати
-            </p>
+            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">3D Студя B.G.V.
+Превращаем ваши идеи в реальность с помощью современной 3D-печати</p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button onClick={() => scrollToSection('contact')} size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg px-8">
                 Получить консультацию
