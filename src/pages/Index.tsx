@@ -192,8 +192,8 @@ export default function Index() {
       <section id="hero" className="pt-32 pb-20 px-4">
         <div className="container mx-auto text-center">
           <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Инновационные технологии
-3Д Студия "B.G.V."</h1>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-justify">Инновационные технологии 
+3Д Студия B.G.V.</h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Превращаем ваши идеи в реальность с помощью современной 3D-печати
             </p>
