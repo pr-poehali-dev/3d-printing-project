@@ -506,7 +506,7 @@ export default function Index() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Цены и тарифы</h2>
           <p className="text-center text-gray-600 mb-12 text-lg">Прозрачное ценообразование без скрытых платежей</p>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 max-w-7xl mx-auto">
             <Card className="relative hover:shadow-2xl transition-all duration-300 border-2">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-2">Эконом</h3>
@@ -621,6 +621,39 @@ export default function Index() {
                 <Button onClick={() => scrollToSection('contact')} variant="outline" className="w-full">Выбрать</Button>
               </CardContent>
             </Card>
+
+            <Card className="relative hover:shadow-2xl transition-all duration-300 border-2">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-2">Серийная печать</h3>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold">от 3₽ гр.</span>
+                  <span className="text-gray-600">/шт</span>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Большие партии (от 50 шт)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Скидки на объём</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Стабильное качество</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Контроль каждой детали</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-secondary mt-1 flex-shrink-0" />
+                    <span>Договор на поставку</span>
+                  </li>
+                </ul>
+                <Button onClick={() => scrollToSection('contact')} variant="outline" className="w-full">Выбрать</Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -650,6 +683,7 @@ export default function Index() {
                       <option value="350">Базовый - ₽350/час</option>
                       <option value="500">Профессиональный - ₽500/час</option>
                       <option value="800">Премиум - ₽800/час</option>
+                      <option value="custom">Серийная печать - индивидуально</option>
                     </select>
                   </div>
                   
